@@ -39,7 +39,7 @@
 <script lang="ts">
 import { Vue, Component, Watch } from "vue-property-decorator";
 
-@Component({})
+@Component
 export default class NavBar extends Vue {
 
   path: string = this.$route.path;
@@ -65,16 +65,12 @@ a {
 }
 
 .nav-bar {
-  position: absolute;
-  height: 25vh;
-  top: 0;
-  left: 0;
+  position: relative;
   width: 100%;
+  height: 25vh;
   // background: blue;
   display: flex;
   justify-content: flex-end;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-
   .logo{
     position: absolute;
     width:20vh;

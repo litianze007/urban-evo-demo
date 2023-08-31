@@ -20,7 +20,7 @@ import NavBar from "@/components/nav-bar.vue";
 export default class PageLayout extends Vue {}
 </script>
 
-<style lang="less">
+<style lang="less" scoped>
 .block {
   z-index: -999;
 }

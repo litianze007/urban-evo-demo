@@ -1,10 +1,23 @@
 import Vue from "vue";
 import App from "./App.vue";
 import router from "./router";
+import * as VueGoogleMaps from 'vue2-google-maps';
+import ElementUI from 'element-ui';
+import 'element-ui/lib/theme-chalk/index.css';
 
 import '@/style/reset.css';
 
 Vue.config.productionTip = false;
+
+Vue.use(VueGoogleMaps, {
+  load: {
+    key: 'AIzaSyCrjFjoIBudZUa7OpNrOSN8_tgiXwga9rs', // 此处填入谷歌地图申请的key
+    libraries: 'places',
+  },
+})
+
+Vue.use(ElementUI);
+
 
 new Vue({
   router,

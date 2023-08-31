@@ -8,7 +8,11 @@ const routes: Array<RouteConfig> = [
   // 直接跳转到布局页面
   {
     path: '/',
-    redirect: '/layout',
+    redirect: '/layout/mapbased-forum',
+  },
+  {
+    path: '/layout',
+    redirect: '/layout/mapbased-forum',
   },
   {
     path: "/layout",
@@ -23,24 +27,15 @@ const routes: Array<RouteConfig> = [
       },
       {
         path: 'reward-system',
-        component: ()=> import(/* webpackChunkName: "about" */ "@/views/HomeView.vue"),
+        component: ()=> import(/* webpackChunkName: "about" */ "@/views/mapbased-forum.vue"),
         name: 'rewardSystem',
       },
       {
         path: 'message-box',
-        component: ()=> import(/* webpackChunkName: "about" */ "@/views/HomeView.vue"),
+        component: ()=> import(/* webpackChunkName: "about" */ "@/views/mapbased-forum.vue"),
         name: 'messageBox',
       },
     ]
-  },
-  {
-    path: "/about",
-    name: "about",
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () =>
-      import(/* webpackChunkName: "about" */ "../views/AboutView.vue"),
   },
 ];
 
