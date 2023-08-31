@@ -32,6 +32,7 @@ export default class QuestionairDia extends Vue {
     closeDialog(){
       console.log("close dialog");
       this.$set(this.showControl, this.showIndex, false);
+      this.$emit("check-nair", this.showIndex);
     }
 }
 </script>

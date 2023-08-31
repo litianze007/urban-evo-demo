@@ -1,6 +1,6 @@
 <template>
   <div class="nav-bar">
-    <div class="logo">
+    <div class="logo" @click="toRouter('/layout')">
       <img src="../assets/logo.png" alt="logo">
     </div>
 
@@ -76,6 +76,7 @@ a {
     width:20vh;
     top: 30px;
     left:40px;
+    cursor: pointer;
     img{
       width:100%;
     }

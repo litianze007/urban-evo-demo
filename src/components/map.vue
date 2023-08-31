@@ -2,15 +2,11 @@
         <div id="map">
                 <GmapMap :center="center" :zoom="zoom" :style="mapStyle" ref="mapRef" :options="mapOptions">
                         <div v-for="(m, index) in markers" :key="index">
-                                <GmapMarker
-                                        :position="m.position"
-                                        :title="m.title"
-                                        :label="m.label"
+                                <GmapMarker :position="m.position" :title="m.title" :label="m.label"
                                         @click="clickMarker(index)">
                                 </GmapMarker>
-                                <QuestionairDia
-                                        :show-control="questionDialogShowControl"
-                                        :show-index="index">
+                                <QuestionairDia :show-control="questionDialogShowControl" :show-index="index"
+                                        @check-nair="checkNair">
                                 </QuestionairDia>
                         </div>
                 </GmapMap>
@@ -24,12 +20,12 @@ import { getMapOptions } from '../jsons/mapOptions';
 import QuestionairDia from './dialogs/questionair-dia.vue';
 
 @Component({
-        components:{
+        components: {
                 QuestionairDia
         }
 })
 export default class Map extends Vue {
-        map? = null;
+        map?= null;
 
         center = {
                 lat: -35.2813,
@@ -49,11 +45,41 @@ export default class Map extends Vue {
 
         questionDialogShowControl: boolean[] = [];
 
+        // the nair has done
+        nairDone: boolean[] = []
 
-        clickMarker(index: number){
-                console.log(111111);
+
+
+
+
+        clickMarker(index: number) {
+                if (this.nairDone[index]) {
+                        this.$router.push({
+                                path: '/layout/forum'
+                        });
+                        return;
+                }
                 this.$set(this.questionDialogShowControl, index, true);
                 console.log(this.questionDialogShowControl[index]);
+        }
+
+
+
+        checkNair(index: number) {
+                this.$set(this.nairDone, index, true);
+                localStorage.setItem('nairDone', JSON.stringify(this.nairDone))
+                this.$message({
+                        showClose: true,
+                        message: 'Submitted successfully, forwarding to discussion ...',
+                        type: 'success',
+                        duration: 2500,
+                });
+
+                setTimeout(()=>{
+                        this.$router.push({
+                                path: '/layout/forum'
+                        });
+                }, 2000)
         }
 
         mounted() {
@@ -64,24 +90,31 @@ export default class Map extends Vue {
                                         lat: -35.2813,
                                         lng: 149.1183,
                                 },
-                                title:"planning building",
+                                title: "planning building",
                         },
                         {
                                 position: {
                                         lat: -35.2830,
                                         lng: 149.1183,
                                 },
-                                title:"planning building",
+                                title: "planning building",
                         },
                         {
                                 position: {
                                         lat: -35.2800,
                                         lng: 149.1186,
                                 },
-                                title:"planning building",
+                                title: "planning building",
                         },
                 ];
                 this.questionDialogShowControl = Array(this.markers.length).fill(false);
+
+                if(!localStorage.getItem('nairDone')){
+                        this.nairDone = Array(this.markers.length).fill(false);
+                }
+                else{
+                        this.nairDone = JSON.parse(localStorage.getItem('nairDone') as string);
+                }
         }
 }
 </script>
@@ -90,6 +123,7 @@ export default class Map extends Vue {
 #map {
         display: flex;
         width: 100%;
+        z-index: 1;
         justify-content: center;
         margin-bottom: 5vh;
 }

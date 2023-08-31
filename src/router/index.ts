@@ -35,6 +35,11 @@ const routes: Array<RouteConfig> = [
         component: ()=> import(/* webpackChunkName: "about" */ "@/views/mapbased-forum.vue"),
         name: 'messageBox',
       },
+      {
+        path: 'forum',
+        component: ()=> import(/* webpackChunkName: "about" */ "@/views/forum.vue"),
+        name: 'forum',
+      }
     ]
   },
 ];

@@ -50,8 +50,6 @@ export default class Questionnair extends Vue {
 
     onSubmit() {
         // Handle the form submission
-        console.log('Form Data:', this.form);
-        this.$message.success('Form submitted successfully!');
         this.$emit("closeDialog");
     }
 
