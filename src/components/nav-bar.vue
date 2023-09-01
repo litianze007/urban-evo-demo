@@ -29,6 +29,14 @@
           </span>
         </div>
       </div>
+      <div class="flex-box">
+        <div class="function-title btn" :class="{ active: path.includes('contact-us') }"
+          @click="toRouter('/layout/contact-us')">
+          <span>
+            Contact Us
+          </span>
+        </div>
+      </div>
     </div>
 
     <div class="avatar">
@@ -67,13 +75,13 @@ a {
 .nav-bar {
   position: relative;
   width: 100%;
-  height: 25vh;
+  height: 18vh;
   // background: blue;
   display: flex;
   justify-content: flex-end;
   .logo{
     position: absolute;
-    width:20vh;
+    width:11vh;
     top: 30px;
     left:40px;
     cursor: pointer;
@@ -84,7 +92,7 @@ a {
 
   .avatar{
     position:absolute;
-    top: 5vh;
+    top: 4vh;
     right:3vw;
     width: 80px;
     height:80px;
@@ -101,7 +109,7 @@ a {
     justify-content: flex-start;
     font-family: "Times New Roman", Times, serif;
     height: 100%;
-    width: 55%;
+    width: 63%;
     right: 0;
     padding: 6vh 5vw;
 
@@ -123,6 +131,7 @@ a {
           background-color: rgb(19, 18, 18);
           color: whitesmoke;
         }
+
       }
 
       .active {
@@ -149,5 +158,45 @@ a {
 .right-box {
   display: flex;
   height: 100%;
+}
+
+@media (max-width: 768px) { /* Adjust for tablets and mobile devices */
+  .nav-bar {
+    flex-direction: column;
+    align-items: center;
+    height: auto;
+
+    .logo {
+      position: static;
+      width: 8vh;
+      margin: 10px 0;
+    }
+
+    .avatar {
+      position: static;
+      width: 60px;
+      height: 60px;
+      margin: 10px 0;
+    }
+
+    .right-box {
+      position: static;
+      width: 100%;
+      padding: 10px 0;
+      justify-content: center;
+      flex-direction: column;
+
+      .flex-box {
+        margin-left: 0;
+        margin-top: 10px;
+      }
+    }
+  }
+
+  .btn {
+    font-size: 14px;
+    width:40%;
+    margin:0 auto;
+  }
 }
 </style>

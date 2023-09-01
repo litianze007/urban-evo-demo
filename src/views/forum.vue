@@ -110,11 +110,6 @@ Challenges and innovations in contemporary urban planning.`
 
 <style scoped lang="less">
 .forum {
-    display: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
     padding: 50px 0;
     font-family: 'Georgia', serif;
     /* 更加优雅的字体 */

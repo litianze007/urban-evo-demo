@@ -9,6 +9,7 @@
   },
   "dependencies": {
     "core-js": "^3.8.3",
+    "dayjs": "^1.11.9",
     "element-ui": "^2.15.14",
     "google-maps": "^4.3.3",
     "vue": "^2.6.14",

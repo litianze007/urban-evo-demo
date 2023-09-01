@@ -23,7 +23,3 @@ export default class MapbasedForum extends Vue {
 
 }
 </script>
-
-<style lang="less">
-
-</style>

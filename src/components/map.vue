@@ -27,6 +27,8 @@ import QuestionairDia from './dialogs/questionair-dia.vue';
 export default class Map extends Vue {
         map?= null;
 
+
+        // map basic options
         center = {
                 lat: -35.2813,
                 lng: 149.1183,
@@ -40,7 +42,7 @@ export default class Map extends Vue {
 
         mapStyle = {
                 width: '80%',
-                height: '110vh',
+                height: '77vh',
         };
 
         questionDialogShowControl: boolean[] = [];

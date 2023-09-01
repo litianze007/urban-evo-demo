@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="box">
     <nav-bar></nav-bar>
     <div class="block">
       <router-view></router-view>
@@ -23,5 +23,8 @@ export default class PageLayout extends Vue {}
 <style lang="less" scoped>
 .block {
   z-index: -999;
+  display: relative;
+  width:100%;
+  height: 100%;
 }
 </style>
