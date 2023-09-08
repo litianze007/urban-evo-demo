@@ -1,15 +1,12 @@
 <template>
   <div class="questionair-dia">
-    <el-dialog
-      title="Tips"
-      :visible.sync="showControl[showIndex]"
-      append-to-body
-      width="600px"
-    >
-      <Questionnair @closeDialog="closeDialog"/>
+    <el-dialog title="Questionnaire" :visible.sync="showControl" append-to-body width="600px"
+      @close="$emit('update:showControl', false)">
+      <Questionnair @closeDialog="closeDialog" />
     </el-dialog>
   </div>
 </template>
+
 
 <script lang="ts">
 import { Component, Vue, Prop, Watch } from 'vue-property-decorator';
@@ -17,24 +14,23 @@ import Questionnair from './questionnair.vue';
 
 
 @Component({
-  components:{
+  components: {
     Questionnair
   }
 }
 )
 export default class QuestionairDia extends Vue {
 
-    @Prop() showControl!:boolean[];
-    @Prop() showIndex!: number;
+  @Prop() showControl!: boolean;
 
 
-    // close the dialog
-    closeDialog(){
-      console.log("close dialog");
-      this.$set(this.showControl, this.showIndex, false);
-      this.$emit("check-nair", this.showIndex);
-    }
+  // close the dialog
+  closeDialog() {
+    this.$emit('update:showControl', false);
+    this.$emit("check-nair");
+  }
 }
 </script>
 
-<style lang="less"></style>
+<style lang="less">
+</style>

@@ -23,3 +23,12 @@ export default class MapbasedForum extends Vue {
 
 }
 </script>
+
+
+<style scoped lang="less">
+.mapbased-forum{
+    display: flex;
+    justify-content: center;
+}
+
+</style>

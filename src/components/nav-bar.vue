@@ -40,6 +40,7 @@
     </div>
 
     <div class="avatar">
+      M
     </div>
   </div>
 </template>
@@ -79,29 +80,43 @@ a {
   // background: blue;
   display: flex;
   justify-content: flex-end;
-  .logo{
+
+  .logo {
     position: absolute;
-    width:11vh;
+    width: 11vh;
     top: 30px;
-    left:40px;
+    left: 40px;
     cursor: pointer;
-    img{
-      width:100%;
+
+    img {
+      width: 100%;
     }
   }
 
-  .avatar{
-    position:absolute;
+  .avatar {
+    position: absolute;
     top: 4vh;
-    right:3vw;
+    right: 3vw;
     width: 80px;
-    height:80px;
+    height: 80px;
     border-radius: 50%;
     border: 4px solid black;
-    background: url("../assets/avatar.png") no-repeat top;
+    background-color: orangered;
+    /* You can choose a background color that you like */
     cursor: pointer;
-    background-size:100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* These will vertically and horizontally center the letter */
+    font-size: 4em;
+    /* Adjust according to your preference */
+    font-weight: bold;
+    /* Making the letter bold */
+    color: white;
+    /* Color of the letter */
+    font-family: 'Roboto', sans-serif;
   }
+
   .right-box {
     position: absolute;
     // background-color: red;
@@ -160,7 +175,9 @@ a {
   height: 100%;
 }
 
-@media (max-width: 768px) { /* Adjust for tablets and mobile devices */
+@media (max-width: 768px) {
+
+  /* Adjust for tablets and mobile devices */
   .nav-bar {
     flex-direction: column;
     align-items: center;
@@ -195,8 +212,8 @@ a {
 
   .btn {
     font-size: 14px;
-    width:40%;
-    margin:0 auto;
+    width: 40%;
+    margin: 0 auto;
   }
 }
 </style>
