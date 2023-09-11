@@ -93,7 +93,7 @@ a {
   .avatar{
     position:absolute;
     top: 4vh;
-    right:3vw;
+    right:2vw;
     width: 80px;
     height:80px;
     border-radius: 50%;
@@ -104,12 +104,11 @@ a {
   }
   .right-box {
     position: absolute;
-    // background-color: red;
     display: flex;
     justify-content: flex-start;
     font-family: "Times New Roman", Times, serif;
+    width: 70%;
     height: 100%;
-    width: 63%;
     right: 0;
     padding: 6vh 5vw;
 
