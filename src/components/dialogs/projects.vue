@@ -26,7 +26,10 @@
             <div class="text item">
                 {{ project.description }}
             </div>
-            <div class="text item" style="color:rgb(248, 116, 116)">
+            <div class="text item">
+                <a :href="documentLink" target="_blank">Go to more detail</a>
+            </div>
+            <div class="text item" style="color:rgb(248, 116, 116);text-align: right;">
                 {{ project.due }}
             </div>
         </el-card>
@@ -84,6 +87,8 @@ export default class Projects extends Vue {
         }
     ];
 
+    documentLink = "https://www.planning.act.gov.au/development-applications-assessments/development-applications/da-details?da-number=202138926&amendment-version=";
+
 
     showControl = false;
 
@@ -137,6 +142,21 @@ export default class Projects extends Vue {
 <style lang="less" scoped>
 .text {
     font-size: 14px;
+
+    /* Border Bottom Animation */
+    a {
+        text-decoration: none;
+        color: #007BFF;
+        border-bottom: 2px solid transparent;
+        transition: border-bottom 0.3s;
+    }
+
+    /* Link Hover Effect */
+    a:hover {
+        border-bottom: 2px solid #007BFF;
+    }
+
+
 }
 
 .item {

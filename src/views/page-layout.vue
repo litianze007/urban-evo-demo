@@ -2,7 +2,9 @@
   <div class="box">
     <nav-bar></nav-bar>
     <div class="block">
-      <router-view></router-view>
+      <KeepAlive>
+        <router-view></router-view>
+      </KeepAlive>
     </div>
   </div>
 </template>
